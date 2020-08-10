@@ -151,10 +151,6 @@ class MainUI(QWidget):
     def OKClicked(self):
         if self.FileName!='':
             if self.Mode.currentIndex()==0:
-                try:
-                    os.mkdir(self.FileName + 'Split')
-                except:
-                    pass
                 if self.IsEnc.currentIndex()==0:
                     pass
                 else:
@@ -168,6 +164,10 @@ class MainUI(QWidget):
                     else:
                         self.encrypt_file('qdghjgj@$#165%qw'.encode('utf-8'),self.FileName)
                     self.FileName = self.FileName + '.enc'
+                try:
+                    os.mkdir(self.FileName + 'Split')
+                except:
+                    pass
                 try:
                     if self.blockSize.currentIndex() == 1:
                         ch = int(self.bolckX.text())
