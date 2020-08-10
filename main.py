@@ -199,15 +199,15 @@ class MainUI(QWidget):
                                 if len(self.EncKey.text()) >= 16:
                                     self.decrypt_file(self.EncKey.text()[:16].encode('utf-8'),
                                                       dirName1 + '/' + fileName,
-                                                      out_filename=fileName[:-4])
+                                                      out_filename=dirName1 + '/' + fileName[:-4])
                                 else:
                                     i = 16 // len(self.EncKey.text())
                                     j = 16 % len(self.EncKey.text())
                                     self.decrypt_file((self.EncKey.text() * i + self.EncKey.text()[:j]).encode('utf-8'),
-                                                      dirName1 + '/' + fileName, out_filename=fileName[:-4])
+                                                      dirName1 + '/' + fileName, out_filename=dirName1 + '/' + fileName[:-4])
                             else:
                                 self.decrypt_file('qdghjgj@$#165%qw'.encode('utf-8'), dirName1 + '/' + fileName,
-                                                  out_filename=fileName[:-4])
+                                                  out_filename=dirName1 + '/' + fileName[:-4])
                             os.remove(dirName1 + '/' + fileName)
                             self.tipLable.setText("合并成功")
                         except:
