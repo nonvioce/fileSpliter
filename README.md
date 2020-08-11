@@ -7,9 +7,18 @@
 
 原理来自于https://www.cnblogs.com/shenghl/p/3946656.html  
 用Pyqt5加了GUI  
+
 ## 2.0
 加入了加密功能  
 参考https://www.cjavapy.com/article/243/  
+
+### 关于密码
+1. 密码为16位，AES加密
+2. 不足十六位用乘法补足16位
+3. 超过16位取前16位
+4. 留空为默认密码
+5. 填中文闪退（小bug暂时不改了）
+
 ## 源码
 Python3  
 库:PyCryptodome,PyQt5
